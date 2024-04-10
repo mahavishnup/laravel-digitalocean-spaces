@@ -31,8 +31,13 @@ class UserResource extends Resource
                     ->required(),
                 Forms\Components\DateTimePicker::make('email_verified_at'),
                 Forms\Components\TextInput::make('password')
+                    ->visibleOn('create')
                     ->password()
                     ->required(),
+                SpatieMediaLibraryFileUpload::make('attachment')
+                    ->downloadable()
+                    ->image()
+                    ->optimize('webp'),
             ]);
     }
 
@@ -55,12 +60,6 @@ class UserResource extends Resource
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
-                SpatieMediaLibraryFileUpload::make('attachment'),
-//                SpatieMediaLibraryFileUpload::make('attachment')
-//                    ->image()
-//                    ->multiple()
-//                    ->optimize('webp')
-//                    ->resize(50),
             ])
             ->filters([
                 //
