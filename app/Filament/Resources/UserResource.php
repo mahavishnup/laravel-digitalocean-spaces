@@ -12,6 +12,7 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 
 class UserResource extends Resource
 {
@@ -54,6 +55,7 @@ class UserResource extends Resource
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
+                SpatieMediaLibraryFileUpload::make('attachment'),
             ])
             ->filters([
                 //
