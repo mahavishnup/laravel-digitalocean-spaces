@@ -37,6 +37,7 @@ class UserResource extends Resource
                 SpatieMediaLibraryFileUpload::make('attachment')
                     ->downloadable()
                     ->image()
+                    ->disk('do')
                     ->optimize('webp'),
             ]);
     }
