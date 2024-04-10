@@ -56,6 +56,11 @@ class UserResource extends Resource
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
                 SpatieMediaLibraryFileUpload::make('attachment'),
+//                SpatieMediaLibraryFileUpload::make('attachment')
+//                    ->image()
+//                    ->multiple()
+//                    ->optimize('webp')
+//                    ->resize(50),
             ])
             ->filters([
                 //
